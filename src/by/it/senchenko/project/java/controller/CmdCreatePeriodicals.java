@@ -20,6 +20,7 @@ public class CmdCreatePeriodicals extends Action {
         if (user.getFk_Role() != 1) {
             Form.showMessage(req, "Недостаточно прав");
             Form.showError(req, "Ошибка");
+            return Actions.LOGIN.action;
         } else {
             if (Form.isPost(req)) {
                 Periodicals periodicalsFromForm = new Periodicals();

@@ -18,6 +18,7 @@ public class CmdShowUsers extends Action {
         if (user.getFk_Role() != 1) {
             Form.showMessage(req, "Недостаточно прав");
             Form.showError(req, "Ошибка");
+            return Actions.LOGIN.action;
         } else {
             if (Form.isPost(req)) {
                 User userFromForm = new User();
