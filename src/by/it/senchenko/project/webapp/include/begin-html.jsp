@@ -33,6 +33,7 @@
               <li><a href="do?command=ShowUsers">Список пользователей</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
+                        <li><a><font color="blue">${user.login}</font></a></li>
                           <li><a href="do?command=SignUp">Зарегистрироваться</a></li>
                          <c:choose>
                             <c:when test="${user!=null}">

@@ -12,6 +12,7 @@ public abstract class AbstractClassDAO {
         try (Connection connection = CN.getConnection();
              Statement statement = connection.createStatement()) {
             result = statement.executeUpdate(sql);
+            //если это была вставка вернем ключ, а иначе вернем число записей
             if (sql.trim().toUpperCase().startsWith("INSERT")) {
                 ResultSet resultSet = statement.executeQuery("SELECT LAST_INSERT_ID();");
                 if (resultSet.next()) result = resultSet.getInt(1);

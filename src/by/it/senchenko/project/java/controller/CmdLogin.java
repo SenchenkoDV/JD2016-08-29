@@ -1,5 +1,6 @@
 package by.it.senchenko.project.java.controller;
 
+import by.it.senchenko.project.java.Filters.MD5HashingExample;
 import by.it.senchenko.project.java.beans.User;
 import by.it.senchenko.project.java.dao.SingletonDAO;
 
@@ -21,7 +22,7 @@ public class CmdLogin extends Action {
                 List<User> users = dao.user.getAll(
                         String.format("WHERE Login='%s' and Password='%s' LIMIT 0,1",
                                 user.getLogin(),
-                                user.getPassword()
+                                MD5HashingExample.convert(user.getPassword())
                         ));
                 if (users.size() == 1) {
                     //user ok. save to session
