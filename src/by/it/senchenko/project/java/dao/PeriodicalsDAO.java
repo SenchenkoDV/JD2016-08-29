@@ -23,10 +23,10 @@ public class PeriodicalsDAO extends AbstractClassDAO implements InterfaceForDAO<
     @Override
     public boolean create(Periodicals periodicals) {
         String sql = String.format(Locale.ENGLISH,
-                "insert INTO periodicals(Name, Autor, Date, FK_User)" +
+                "insert INTO periodicals(Name, Author, Date, FK_User)" +
                         "\n values('%s', '%s', '%s' ,'%d');",
                 periodicals.getName(),
-                periodicals.getAutor(),
+                periodicals.getAuthor(),
                 periodicals.getDate(),
                 periodicals.getFK_User()
         );
@@ -38,13 +38,13 @@ public class PeriodicalsDAO extends AbstractClassDAO implements InterfaceForDAO<
     public boolean update(Periodicals periodicals) {
         String sql = String.format(Locale.ENGLISH,
                 "UPDATE `periodicals` SET " +
-                        "`Name`=%s " +
-                        ",`Autor`='%s'" +
+                        "`Name`='%s'" +
+                        ",`Author`='%s'" +
                         ",`Date`='%s'" +
                         ",`FK_User`=%d" +
                         " WHERE `periodicals`.`ID` = %d",
                 periodicals.getName(),
-                periodicals.getAutor(),
+                periodicals.getAuthor(),
                 periodicals.getDate(),
                 periodicals.getFK_User(),
                 periodicals.getID()
@@ -73,7 +73,7 @@ public class PeriodicalsDAO extends AbstractClassDAO implements InterfaceForDAO<
                 Periodicals periodicals = new Periodicals();
                 periodicals.setID(resultSet.getInt("ID"));
                 periodicals.setName(resultSet.getString("Name"));
-                periodicals.setAutor(resultSet.getString("Autor"));
+                periodicals.setAuthor(resultSet.getString("Author"));
                 periodicals.setDate(resultSet.getString("Date"));
                 periodicals.setFK_User(resultSet.getInt("FK_User"));
                 per.add(periodicals);

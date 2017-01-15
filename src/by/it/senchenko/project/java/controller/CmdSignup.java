@@ -16,7 +16,7 @@ public class CmdSignup extends Action {
                 user.setLogin(Form.getString(req,"Login",Patterns.LOGIN));
                 user.setPassword(Form.getString(req,"Password",Patterns.PASSWORD));
                 user.setEmail(Form.getString(req,"Email",Patterns.EMAIL));
-                user.setFk_Role(2);
+                user.setFk_Role(Form.getInt(req,"FK_role"));
                 SingletonDAO dao= SingletonDAO.getSingletonDAO();
                 if (dao.user.create(user)){
                     return Actions.LOGIN.action;

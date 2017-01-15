@@ -2,10 +2,13 @@
 
 <footer class="navbar-bottom row-fluid">
   <div class="container">
-    <p>Сообщение сервера: ${message}</p>
-    <p>Ошибки сервера: <b><font color="red">${jsp_error}</font></b></p>
+    <p></p>
+    <p><span class="badge badge-inverse">Сообщение сервера: ${message}</span></p>
+    <p><span class="badge badge-inverse">Ошибки сервера: <b><font color="red">${jsp_error}</font></b></span></p>
 
-    <p>IT-academy © 2016 <a href="#">Контакты</a> </p>
+
+
+    <p>IT-academy © 2016 <a href="https://www.linkedin.com/in/денис-сенченко-218b7512a">Контакты</a> </p>
   </div>
 </footer>
 

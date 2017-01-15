@@ -13,7 +13,7 @@
             <div class="col-md-4">
                 <input id="id" name="ID" value="0" type="text"
 
-                placeholder="" class="form-control input-md" required="">
+                placeholder="" class="form-control input-md" required="" readonly>
                 <span class="help-block">Это поле не требуется</span>
             </div>
         </div>

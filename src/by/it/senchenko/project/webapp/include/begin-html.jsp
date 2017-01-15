@@ -33,13 +33,14 @@
               <li><a href="do?command=ShowUsers">Список пользователей</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                        <li><a><font color="blue">${user.login}</font></a></li>
-                          <li><a href="do?command=SignUp">Зарегистрироваться</a></li>
+
                          <c:choose>
                             <c:when test="${user!=null}">
-                                <li><a href="do?command=Profile">Профиль</a></li>
+                                <li><a><font color="blue">${user.login} / ${user.email}</font></a></li>
+                                <li><a href="do?command=Profile"><font color="green">Профиль</font></a></li>
                             </c:when>
                             <c:otherwise>
+                                <li><a href="do?command=SignUp">Зарегистрироваться</a></li>
                                 <li><a href="do?command=Login">Войти</a></li>
                             </c:otherwise>
                          </c:choose>

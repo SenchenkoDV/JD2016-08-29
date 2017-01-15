@@ -27,11 +27,11 @@ public class CmdCreatePeriodicals extends Action {
                 try {
                     periodicalsFromForm.setID(Form.getInt(req, "ID"));
                     periodicalsFromForm.setName(Form.getString(req, "Name", Patterns.PASSWORD));
-                    periodicalsFromForm.setAutor(Form.getString(req, "Autor", Patterns.PASSWORD));
+                    periodicalsFromForm.setAuthor(Form.getString(req, "Author", Patterns.PASSWORD));
                     periodicalsFromForm.setDate(Form.getString(req, "Date", Patterns.PASSWORD));
-                    //periodicalsFromForm.setFK_User(Form.getInt(req, "FK_User"));
+                    periodicalsFromForm.setFK_User(user.getId());
                     if (periodicalsFromForm.getID() > 0) {
-                        Form.showError(req, "Ошибка");
+                        //Form.showError(req, "Ошибка");
                         dao.periodicals.update(periodicalsFromForm);
                     } else if (periodicalsFromForm.getID() == 0) {
                         dao.periodicals.create(periodicalsFromForm);

@@ -4,20 +4,21 @@
       <!-- Основное содержимое -->
       <div class="page-header">
         <h1>Периодические издания</h1>
-        <p>${user.email} ${user.login}</p>
+
       </div>
 
             <div class="row">
-                     <div class="col-md-6">Название издания</div>
-                     <div class="col-md-4">Издатель</div>
-                     <div class="col-md-2">Дата выхода издания</div>
+                     <div class="col-md-5"><span class="label label-success"><big>Название издания</big></span></div>
+                     <div class="col-md-4"><span class="label label-success"><big>Издатель</big></span></div>
+                     <div class="col-md-3"><span class="label label-success"><big>Дата выхода издания</big></span></div>
 
             </div>
          <c:forEach items="${periodical}" var="periodicals">
                    <div class="row">
-                     <div class="col-md-6">${periodicals.name} </div>
-                     <div class="col-md-4">${periodicals.autor}</div>
-                     <div class="col-md-2">${periodicals.date}</div>
+                     <p></p>
+                     <div class="col-md-5">${periodicals.name}</div>
+                     <div class="col-md-4">${periodicals.author}</div>
+                     <div class="col-md-3">${periodicals.date}</div>
                    </div>
          </c:forEach>
  <!--
@@ -38,6 +39,5 @@
       </div>
 
 -->
-
 
 <%@ include file="include/end-html.jsp" %>

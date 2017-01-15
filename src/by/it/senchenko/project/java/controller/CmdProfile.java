@@ -26,7 +26,7 @@ public class CmdProfile extends Action{
 
         User user=(User)req.getSession().getAttribute("user");
         if (user!=null){
-            List<Periodicals> periodicals= SingletonDAO.getSingletonDAO().periodicals.getAll(String.format(" where FK_Users='%d'",user.getId()));
+            List<Periodicals> periodicals= SingletonDAO.getSingletonDAO().periodicals.getAll(String.format(" where FK_User='%d'",user.getId()));
             req.setAttribute("periodicals",periodicals);
         }
 
